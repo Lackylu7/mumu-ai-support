@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mumu-ai-support"
+version = "0.1.0"
+description = "A production-oriented DingTalk knowledge-base customer-support bot with evidence-first retrieval and human handoff"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = ["dingtalk-stream==0.24.3", "requests>=2.27.1"]
+
+[project.optional-dependencies]
+test = ["pytest>=8.0"]
+
+[project.scripts]
+mumu-kb = "mumu_kb.cli:main"
+mumu-bot = "mumu_bot.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
